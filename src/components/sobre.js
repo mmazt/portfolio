@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
-import {Grid, Image} from 'semantic-ui-react'
+import {Grid, Image, Transition} from 'semantic-ui-react'
 import foto from '../images/foto-pixel.jpg'
 import Estrela from './estrelas'
 import {criarEstrelas} from '../scripts/RandomEstrelasNuvems'
 
+
+
+
 class Sobre extends Component {
+  constructor(props){
+    super(props)
+    this.state = {animation: 'fly up', estrelas: []}
+  }
+
   componentWillMount(){
+  if(this.props.previous === 'contato' || this.props.previous === 'habilidades' || this.props.previous === 'projetos'){
+      this.setState({animation: 'fly down'})
+  }
     let arr = criarEstrelas(50)
     this.setState({estrelas: arr})
   }
 
+
   render(){
     return(
-      <div >
+      
+      <Transition transitionOnMount={true} unmountOnHide={true} duration={300} animation={this.state.animation} >
+      <div className='sobre'>
       <div id='campo_estrelas' style={{width: '100%', position:'relative'}}>
-        {this.state.estrelas.map(estrela => <Estrela x={estrela.x} y={estrela.y} size={estrela.size}/>)}
+        {this.state.estrelas.map((estrela, i) => <Estrela key={i} x={estrela.x} y={estrela.y} size={estrela.size}/>)}
       </div>
-      <Grid centered style={{ paddingTop: '80px'}} >
+      <Grid centered style={{ paddingTop: '80px'}} padded >
       <Grid.Row>
         <Grid.Column width={2} mobile={4} tablet={4} >
             <Image src={foto} alt='foto'  shape='circular'  floated='right'  verticalAlign='middle' />
@@ -35,6 +49,8 @@ class Sobre extends Component {
       </Grid.Row>
       </Grid>
       </div>
+      </Transition>
+      
     )
   }
 }

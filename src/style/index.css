@@ -1,5 +1,11 @@
+
 body #root{
+
+  padding: 0;
+  margin: 0;
+  border: 0;
   height: 100%;
+
 }
 
 .hello {
@@ -13,8 +19,17 @@ body #root{
   margin: 0;
   color: #ffffff;
 }
+.main {
+  background: rgb(34, 33, 38);
+  height: 100%;
+  overflow: auto;
+}
+.menu {
+  position: relative;
+  z-index: 1000;
+}
 
-#sobre {
+.sobre {
   background: rgb(34, 33, 38);
   background: -moz-linear-gradient(top, rgba(34, 33, 38, 1) 0%, rgba(34, 33, 38, 1) 43%, rgba(36, 37, 57, 1) 53%);
   background: -webkit-linear-gradient(top, rgba(34, 33, 38, 1) 0%, rgba(34, 33, 38, 1) 43%, rgba(36, 37, 57, 1) 53%);
@@ -22,14 +37,11 @@ body #root{
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#222126', endColorstr='#242539', GradientType=0);
   background-size: 100%;
   background-clip: border-box;
-  padding: 0;
-  margin: 0;
   border: 0;
   height: 100%;
-  overflow: auto;
 }
 
-#projetos {
+.projetos {
   background: rgb(36, 37, 57);
   background: -moz-linear-gradient(top, rgba(36, 37, 57, 1) 0%, rgba(45, 48, 83, 1) 6%, rgba(45, 48, 83, 1) 56%, rgba(49, 51, 125, 1) 63%);
   background: -webkit-linear-gradient(top, rgba(36, 37, 57, 1) 0%, rgba(45, 48, 83, 1) 6%, rgba(45, 48, 83, 1) 56%, rgba(49, 51, 125, 1) 66%);
@@ -39,10 +51,9 @@ body #root{
   background-clip: border-box;
   border: 0;
   height: 100%;
-  overflow: auto;
 }
 
-#habilidades {
+.habilidades {
   background: rgb(49, 51, 125);
   background: -moz-linear-gradient(top, rgba(49, 51, 125, 1) 0%, rgba(68, 101, 229, 1) 10%, rgbargba(68, 101, 229, 1) 97%, rgba(61, 166, 224, 1) 100%);
   background: -webkit-linear-gradient(top, rgba(49, 51, 125, 1) 0%, rgba(68, 101, 229, 1) 10%, rgba(68, 101, 229, 1)97%, rgba(61, 166, 224, 1) 100%);
@@ -52,16 +63,14 @@ body #root{
   background-clip: border-box;
   border: 0;
   height: 100%;
-  overflow: auto;
 }
 
-#contato {
+.contato {
   background: rgba(77, 112, 249, 1);
   background-size: 100%;
   background-clip: border-box;
   border: 0;
   height: 100%;
-  overflow: auto;
 }
 
 

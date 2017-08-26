@@ -1,5 +1,5 @@
 import React from 'react'
-import {Menu, Transition, Grid} from 'semantic-ui-react'
+import {Menu, Grid} from 'semantic-ui-react'
 import MenuItem from './item'
 import MenuText from './text'
 

@@ -17,7 +17,7 @@ export const criarEstrelas = (count) => {
         item.size = size
         item.x = Math.min(randomIntBetween(1, w), w - size - 5)
         item.y = Math.min(randomIntBetween(1, h), h - size - 5)
-        return
+        return {}
       })
 
       return arr
