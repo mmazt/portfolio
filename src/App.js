@@ -3,7 +3,7 @@ import {Transition} from 'semantic-ui-react'
 
 import Sobre from './components/sobre'
 import Projects from './components/projetos/projects'
-import Skills from './components/skills'
+import Skills from './components/habilidades/skills'
 import Contact from './components/contact'
 import MainMenu from './components/menu/menu'
 

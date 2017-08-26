@@ -9,7 +9,7 @@ class Pineapple extends React.Component{
 
   render(){
     return(
-      <Transition visible={this.props.visibility} duration={800} animation='slide up' >
+      <Transition visible={this.props.visibility} duration={1200} animation='slide right' >
       <div style={{position: 'absolute', top: '0', left: '0'}}>
       <Grid centered>
         <Grid.Row>
