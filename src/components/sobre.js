@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import {Grid, Image} from 'semantic-ui-react'
 import foto from '../images/foto-pixel.jpg'
+import Estrela from './estrelas'
+import {criarEstrelas} from '../scripts/RandomEstrelasNuvems'
 
-class Intro extends Component {
+class Sobre extends Component {
+  componentWillMount(){
+    let arr = criarEstrelas(50)
+    this.setState({estrelas: arr})
+  }
 
-  
   render(){
     return(
-      <div id='intro'>
-      <Grid centered>
+      <div >
+      <div id='campo_estrelas' style={{width: '100%', position:'relative'}}>
+        {this.state.estrelas.map(estrela => <Estrela x={estrela.x} y={estrela.y} size={estrela.size}/>)}
+      </div>
+      <Grid centered style={{ paddingTop: '80px'}} >
       <Grid.Row>
-        <Grid.Column width={2} >
-          <Image src={foto} alt='foto' shape='circular' />
+        <Grid.Column width={2} mobile={4} tablet={4} >
+            <Image src={foto} alt='foto'  shape='circular'  floated='right'  verticalAlign='middle' />
         </Grid.Column>
         <Grid.Column width={6} style={{marginTop: '20px'}}>     
             <h2 className='hello'>Olá!<br />
@@ -31,4 +39,4 @@ class Intro extends Component {
   }
 }
 
-export default Intro
+export default Sobre
