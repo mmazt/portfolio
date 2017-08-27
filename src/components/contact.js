@@ -1,5 +1,5 @@
 import React from 'react'
-import {Transition, Grid, Image} from 'semantic-ui-react'
+import {Transition, Grid} from 'semantic-ui-react'
 import {criarNuvem} from '../scripts/RandomEstrelasNuvems'
 import Nuvem from './nuvens'
 import flor1 from '../images/flor1.png'
@@ -40,7 +40,7 @@ class contact extends React.Component {
             <h1>Contato</h1>
           </Grid.Row>
           <Grid.Row style={{zIndex: '1000'}}>
-            <Grid.Column width={3}>
+            <Grid.Column textAlign='center'  width={3}>
             <h2>+55 (11) 97065-8184</h2>
             <h2>mazetto.milton@gmail.com</h2>
             <h2>Campinas e RMC</h2>
@@ -48,30 +48,30 @@ class contact extends React.Component {
           </Grid.Row>
           <Grid.Row style={{ position:'relative', paddingTop: '8%'}}>
             <Grid.Column width={3} verticalAlign='bottom' style={{marginBottom: '-60px', marginLeft:'-90px', zIndex: '1000'}}>
-              <img src={tree} />
+              <img src={tree}  alt='Família Feliz'/>
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px', marginLeft:'-110px'}}>
-              <img src={pug}  />
+              <img src={pug}  alt='Família Feliz' />
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px', marginLeft:'-50px'}}>
-              <img src={thais} />
+              <img src={thais}  alt='Família Feliz'/>
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px', marginLeft:'-50px'}}>
-            <img src={mini_milton} />
+            <img src={mini_milton}  alt='Família Feliz'/>
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px', marginLeft:'-50px'}}>
-            <img src={flor1} />
+            <img src={flor1} alt='Família Feliz' />
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px'}}>
-            <img src={flor2} />
+            <img src={flor2}  alt='Família Feliz'/>
             </Grid.Column>
             <Grid.Column width={1} verticalAlign='bottom' style={{marginBottom: '-40px', marginLeft:'-50px'}}>
-            <img src={flor3} />
+            <img src={flor3}  alt='Família Feliz'/>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={7}>
-            <img src={rock_island} />
+            <img src={rock_island} alt='Família Feliz' />
             </Grid.Column>
           </Grid.Row>
         </Grid>

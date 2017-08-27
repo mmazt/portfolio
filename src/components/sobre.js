@@ -32,19 +32,21 @@ class Sobre extends Component {
       </div>
       <Grid centered style={{ paddingTop: '80px'}} padded >
       <Grid.Row>
-        <Grid.Column width={2} mobile={4} tablet={4} >
-            <Image src={foto} alt='foto'  shape='circular'  floated='right'  verticalAlign='middle' />
+
+        <Grid.Column width={2}>
+            <Image src={foto} alt='foto'  shape='circular'   verticalAlign='middle' />
         </Grid.Column>
-        <Grid.Column width={6} style={{marginTop: '20px'}}>     
+        <Grid.Column  width={5} style={{marginTop: '20px'}}>     
             <h2 className='hello'>Olá!<br />
             Eu me chamo Milton Mazetto Junior<br />
             e sou um desenvolvedor Front-End.</h2>
         </Grid.Column>
+
       </Grid.Row>
       <Grid.Row>
-      <Grid.Column width={9} style={{margin:'0', paddingTop:'80px'}} >
-        <p className='formacao'>Minha formação original é na área de História e Educação, mas nos últimos anos tenho trabalhado com o desenvolvimento de projetos na área de Front-End, Web Design e Usabilidade.</p> 
-        <p className='formacao'>Se quiser saber mais sobre a minha trajetória e sobre meus projetos, acesse meu LinkedIn ou faça download do meu Currículo</p>
+      <Grid.Column width={8} style={{margin:'0', paddingTop:'80px'}} >
+        <p className='formacao'>Minha formação original é na área de História e Educação, mas nos últimos anos tenho trabalhado na área de TI, com foco no desenvolvimento de projetos na área de Front-End, Web Design e Usabilidade.</p> 
+        <p className='formacao'>Acesse o meu <a>LinkedIn</a> e saiba mais sobre a minha trajetória e meus projetos, ou faça download do meu <a>Currículo</a>. </p> <p className='formacao'>Se você quiser saber como esse site foi criado, acesse o repositório no meu <a>GitHub</a> </p>
         </Grid.Column>
       </Grid.Row>
       </Grid>

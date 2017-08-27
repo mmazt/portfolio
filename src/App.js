@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Transition} from 'semantic-ui-react'
 
 import Sobre from './components/sobre'
 import Projects from './components/projetos/projects'
@@ -15,11 +14,6 @@ class App extends Component {
     this.handleVisibity = this.handleVisibity.bind(this)
   }
 
-  componentDidUpdate(prevState){
-    const {activeItem, direction } = this.state
-    const prevActive = prevState.activeItem
-
-  }
 
   handleMenuClick(name){
     let previous = this.state.activeItem
