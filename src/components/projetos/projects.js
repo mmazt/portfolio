@@ -31,7 +31,7 @@ class Projects extends React.Component {
       <div key='projetos' className='projetos'>
       <Grid style={{ paddingTop: '80px'}} padded>
         <Grid.Row>
-          <Grid.Column width={14} floated='right'>
+          <Grid.Column width={15} floated='right'>
         <h2>Projetos</h2>
         </Grid.Column>
         </Grid.Row>

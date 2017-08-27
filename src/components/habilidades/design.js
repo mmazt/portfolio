@@ -1,45 +1,48 @@
 import React from 'react'
 import {Grid} from 'semantic-ui-react'
+import Item from './item'
+import icon_illustrator from '../../images/icones/illustrator.png'
+import icon_photoshop from '../../images/icones/photoshop.png'
+import icon_responsivo from '../../images/icones/responsivo.png'
+import icon_ux from '../../images/icones/ux.png'
+import icon_wireframing from '../../images/icones/wireframing.png'
 
 class Design extends React.Component{
   
   render(){
 
     return(
-      <Grid>
+      <Grid style={{marginTop: '-45px'}} >
 
         <Grid.Column width={3} floated='right'>
           <Grid.Row>
-            Html 5
+            <Item name='Photoshop' percent='70%' spacer='30%' icon={icon_photoshop} />
           </Grid.Row>
           <Grid.Row>
-            Redux
+            <Item name='Wireframing' percent='80%' spacer='20%' icon={icon_wireframing} />
           </Grid.Row>
         </Grid.Column>
 
         <Grid.Column width={3} floated='right'>
           <Grid.Row>
-            Html 5
+            <Item name='Illustrator' percent='80%' spacer='20%' icon={icon_illustrator} />
           </Grid.Row>
           <Grid.Row>
-            Redux
           </Grid.Row>
         </Grid.Column>
-      <Grid.Column width={3} floated='right'>
+      <Grid.Column width={3} floated='right' >
         <Grid.Row>
-          Html 5
+        <Item name='Responsivo' percent='80%' spacer='20%' icon={icon_responsivo}/>
         </Grid.Row>
         <Grid.Row>
-          Redux
         </Grid.Row>
       </Grid.Column>
-      
+
       <Grid.Column width={3} floated='right'>
         <Grid.Row>
-          Html 5
+        <Item name='Usabilidade' percent='80%' spacer='20%' icon={icon_ux} />
         </Grid.Row>
         <Grid.Row>
-          Redux
         </Grid.Row>
       </Grid.Column>
   </Grid>

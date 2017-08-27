@@ -22,49 +22,30 @@ export const criarEstrelas = (count) => {
 
       return arr
   }
-  //Função para criar nuvens
-//   function criarNuvem(nomeDiv, c1, c2) {
-//       var w = $("." + nomeDiv).width()
-//       var h = $("." + nomeDiv).height()
-//       var count1 = c1;
-//       var count2 = c2;
+  export const criarNuvem = (count1, count2) => {
+    let w = window.innerWidth
+    let h = window.innerHeight * 0.25
+    let arr1 = [...Array(count1)].map(item => {
+      return {size: '', x: '', y: ''}
+    })
+    let arr2 = [...Array(count2)].map(item => {
+      return {size: '', x: '', y: ''}
+    })
 
-//       for (i = 0; i < count1; i++) {
-//           var size = 10,
-//               x = Math.min(randomIntBetween(1, w), w - size - 5),
-//               y = Math.min(randomIntBetween(1, h), h - size - 5),
-//               elem1 = $("<div class='nuvem1'></div>");
+    arr1.map(item => {
+      let size = 10
+      item.size = size
+      item.x = Math.min(randomIntBetween(1, w), w - size - 5)
+      item.y = Math.min(randomIntBetween(1, h), h - size - 5)
+      return {}
+    })
+    arr2.map(item => {
+      let size = 10
+      item.size = size
+      item.x = Math.min(randomIntBetween(1, w), w - size - 5)
+      item.y = Math.min(randomIntBetween(1, h), h - size - 5)
+      return {}
+    })
 
-//           elem1.css({
-//               "top": y,
-//               "left": x,
-//               "width": size,
-//               "height": size
-//           });
-//           elem1.addClass("s" + randomIntBetween(1, count1));
-//           $("." + nomeDiv).append(elem1);
-//       }
-//       for (i = 0; i < count2; i++) {
-//           var size = 10,
-//               x = Math.min(randomIntBetween(1, w), w - size - 5),
-//               y = Math.min(randomIntBetween(1, h), h - size - 5),
-//               elem2 = $("<div class='nuvem2'></div>");
-
-//           elem2.css({
-//               "top": y,
-//               "left": x,
-//               "width": size,
-//               "height": size
-//           });
-//           elem2.addClass("s" + randomIntBetween(1, count2));
-//           $("." + nomeDiv).append(elem2);
-//       }
-//   }
-
-//   //Chamada das funções de estrelas e nuvens
-//   criarEstrelas("espaco", 200);
-//   criarEstrelas("ceu", 50);
-//   criarEstrelas("ceu2", 20);
-//   criarNuvem("ceu3", 1, 2);
-//   criarNuvem("ceu4", 1, 2);
-// });
+    return {nuvem_pequena: arr1, nuvem_grande: arr2}
+}
