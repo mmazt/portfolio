@@ -101,7 +101,6 @@ body #root{
   background-size: 100%;
   background-clip: border-box;
   border: 0;
-  height: 100%;
   overflow-x: hidden;
 }
 
@@ -114,7 +113,7 @@ body #root{
   background-size: 100%;
   background-clip: border-box;
   border: 0;
-
+  padding: 20px;
 }
 
 .contato {

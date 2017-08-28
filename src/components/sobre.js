@@ -25,7 +25,7 @@ class Sobre extends Component {
   render(){
     return(
       
-      <Transition transitionOnMount={true} unmountOnHide={true} duration={300} animation={this.state.animation} >
+      <Transition transitionOnMount={true} duration={300} animation={this.state.animation} >
       <div className='sobre'>
       <div id='campo_estrelas' style={{width: '100%', position:'relative'}}>
         {this.state.estrelas.map((estrela, i) => <Estrela key={i} x={estrela.x} y={estrela.y} size={estrela.size}/>)}

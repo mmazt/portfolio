@@ -27,8 +27,8 @@ class Projects extends React.Component {
   render(){
     const {activeItem} = this.state
     return(
-      <Transition transitionOnMount={true} unmountOnHide={true} duration={500} animation={this.state.animation} >
-      <div key='projetos' className='projetos'>
+      <Transition transitionOnMount={true}  duration={500} animation={this.state.animation} >
+      <div key='projetos' className='projetos' style={{height: window.innerHeight - 10}}>
       <Grid style={{ paddingTop: '80px'}} padded>
         <Grid.Row>
           <Grid.Column width={15} floated='right'>

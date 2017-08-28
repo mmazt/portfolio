@@ -29,7 +29,7 @@ class contact extends React.Component {
   render(){
     const tamanho_ceu = window.innerHeight * 0.25
     return(
-      <Transition transitionOnMount={true} unmountOnHide={true} duration={500} animation={this.state.animation}  >
+      <Transition transitionOnMount={true} duration={500} animation={this.state.animation}  >
       <div className='contato'>
       <div  className= 'ceu' style={{width: '100%', height:{tamanho_ceu}, position:'relative'}}>
       {this.state.nuvens_grandes.map((nuvem, i) => <Nuvem key={i} x={nuvem.x} y={nuvem.y} size={nuvem.size} classe='nuvem_grande'/>)}

@@ -11,6 +11,18 @@ class MainMenu extends React.Component{
       this.handleExitText = this.handleExitText.bind(this)
     }
 
+    componentWillReceiveProps(nextProps){
+      if(this.props.activeItem !== nextProps.activeItem){
+        
+        let {visible} = this.state
+        visible[nextProps.activeItem] = true
+        this.setState(visible)
+        setTimeout(() => {
+          visible[nextProps.activeItem] = false
+          this.setState({visible})
+        }, 10)
+      }
+    }
     componentDidUpdate(prevState){
       let check = false
       for (let key in this.state.visible) {

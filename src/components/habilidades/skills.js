@@ -20,7 +20,7 @@ class Skills extends React.Component {
 
   render(){
     return(
-      <Transition transitionOnMount={true} unmountOnHide={true} duration={500} animation={this.state.animation}  >
+      <Transition transitionOnMount={true} duration={500} animation={this.state.animation}  >
       <div className='habilidades' style={{height: window.innerHeight - 10}} >
       <Grid >
         <Grid.Row>
