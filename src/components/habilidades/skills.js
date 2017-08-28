@@ -1,5 +1,5 @@
 import React from 'react'
-import {Transition, Grid} from 'semantic-ui-react'
+import {Transition, Grid, Header} from 'semantic-ui-react'
 import Desenvolvimento from './desenvolvimento'
 import Design from './design'
 
@@ -21,30 +21,30 @@ class Skills extends React.Component {
   render(){
     return(
       <Transition transitionOnMount={true} unmountOnHide={true} duration={500} animation={this.state.animation}  >
-      <div className='habilidades'>
-      <Grid padded >
+      <div className='habilidades' style={{height: window.innerHeight - 10}} >
+      <Grid >
         <Grid.Row>
-          <Grid.Column width={15} style={{ paddingTop: '80px'}} floated='right'>
-            <h2>Habilidades</h2>
+          <Grid.Column width={15} style={{ paddingTop: '10px'}} floated='left'>
+            <Header as='h2' className='texto-basico' >Habilidades</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-        <Grid.Column width={15} style={{paddingLeft:'30px'}} floated='right'>
-          <h3>Desenvolvimento</h3>
+        <Grid.Column width={15} style={{paddingLeft:'30px'}} floated='left'>
+          <Header className='texto-basico habilidade-header' as='h3'>Desenvolvimento</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={16} style={{paddingLeft:'30px'}} floated='right'>
+          <Grid.Column width={15} style={{paddingLeft:'0', marginLeft:'0'}} floated='left'>
             <Desenvolvimento />
           </Grid.Column>
           </Grid.Row>
         <Grid.Row >
-        <Grid.Column width={15} style={{paddingLeft:'30px'}} floated='right'>
-        <h3>Desgin</h3>
+        <Grid.Column width={15} style={{paddingLeft:'30px'}} floated='left'>
+        <Header as='h3' className='texto-basico  habilidade-header' >Design</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-        <Grid.Column width={16} style={{paddingLeft:'30px'}} floated='right'>
+        <Grid.Column width={15} style={{paddingLeft:'0'}} floated='left'>
         <Design />
       </Grid.Column>
         </Grid.Row>

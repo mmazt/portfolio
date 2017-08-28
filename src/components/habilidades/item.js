@@ -6,12 +6,12 @@ class SkillItem extends React.Component{
   render(){
     const {percent, name, icon, spacer} = this.props
     return(
-      <Grid style={{position: 'relative', margin:'25px'}} >
+      <Grid  style={{position: 'relative', margin:'0 35px'}} >
         <Grid.Row>
       <p className='skill-legenda' style={{position: 'absolute'}}>{name}</p>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column style={{position: 'absolute', left: '-7px', zIndex:'1000', width: '40px', height: '40px'}} >
+        <Grid.Column className='skill-icon' >
         <img src={icon} style={{position: 'absolute', zIndex:'1000'}} alt='Ícone'/>
         </Grid.Column>
       <Grid.Column style={{position: 'absolute'}}>

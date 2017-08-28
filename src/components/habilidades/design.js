@@ -8,13 +8,16 @@ import icon_ux from '../../images/icones/ux.png'
 import icon_wireframing from '../../images/icones/wireframing.png'
 
 class Design extends React.Component{
+  componentWillMount(){
+    const tela = window.innerWidth
+    this.setState({tela})
+  }
   
   render(){
-
     return(
-      <Grid style={{marginTop: '-45px'}} >
+      <Grid stackable>
 
-        <Grid.Column width={3} floated='right'>
+        <Grid.Column computer={3} tablet={8} floated='right'>
           <Grid.Row>
             <Item name='Photoshop' percent='70%' spacer='30%' icon={icon_photoshop} />
           </Grid.Row>
@@ -23,24 +26,26 @@ class Design extends React.Component{
           </Grid.Row>
         </Grid.Column>
 
-        <Grid.Column width={3} floated='right'>
-          <Grid.Row>
-            <Item name='Illustrator' percent='80%' spacer='20%' icon={icon_illustrator} />
+        <Grid.Column computer={3}  tablet={8}  floated='right'>
+          <Grid.Row   >
+            <Item name='Illustrator' percent='70%' spacer='30%' icon={icon_illustrator} />
           </Grid.Row>
           <Grid.Row>
+
           </Grid.Row>
         </Grid.Column>
-      <Grid.Column width={3} floated='right' >
+
+      <Grid.Column computer={3} tablet={8}  floated='right' >
         <Grid.Row>
-        <Item name='Responsivo' percent='80%' spacer='20%' icon={icon_responsivo}/>
+ <Item name='Responsivo' percent='80%' spacer='20%' icon={icon_responsivo}/>
         </Grid.Row>
         <Grid.Row>
         </Grid.Row>
       </Grid.Column>
 
-      <Grid.Column width={3} floated='right'>
+      <Grid.Column computer={3}  tablet={8}  floated='right'>
         <Grid.Row>
-        <Item name='Usabilidade' percent='80%' spacer='20%' icon={icon_ux} />
+ <Item name='Usabilidade' percent='80%' spacer='20%' icon={icon_ux} />
         </Grid.Row>
         <Grid.Row>
         </Grid.Row>

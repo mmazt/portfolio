@@ -21,8 +21,8 @@ class Desenvolvimento extends React.Component{
   render(){
 
     return(
-      <Grid style={{marginTop: '-45px'}} >
-      <Grid.Column width={3} floated='right'>
+      <Grid style={{marginTop: '-65px'}} stackable verticalAlign='middle'>
+      <Grid.Column computer={3} tablet={8} floated='right'>
         <Grid.Row>
           <Item name='Html 5' percent='90%' spacer='10%' icon={icon_html} />
         </Grid.Row>
@@ -32,13 +32,11 @@ class Desenvolvimento extends React.Component{
         <Grid.Row>
         <Item name='Semantic-UI' percent='80%' spacer='20%' icon={icon_semantic} />
         </Grid.Row>
-        <Grid.Row>
-        <Item name='Wordpress' percent='70%' spacer='30%' icon={icon_wordpress} />
-        </Grid.Row>
+
       </Grid.Column>
 
 
-      <Grid.Column width={3} floated='right'>
+      <Grid.Column computer={3} tablet={8} floated='right'>
         <Grid.Row>
         <Item name='CSS 3' percent='80%' spacer='20%' icon={icon_css3} />
         </Grid.Row>
@@ -52,7 +50,7 @@ class Desenvolvimento extends React.Component{
       </Grid.Column>
 
 
-      <Grid.Column width={3} floated='right'>
+      <Grid.Column  computer={3} tablet={8} floated='right'>
         <Grid.Row>
         <Item name='Javascript' percent='80%' spacer='20%' icon={icon_javascript} />
         </Grid.Row>
@@ -65,7 +63,7 @@ class Desenvolvimento extends React.Component{
       </Grid.Column>
 
 
-      <Grid.Column width={3} floated='right'>
+      <Grid.Column  computer={3} tablet={8} floated='right'>
         <Grid.Row>
         <Item name='React' percent='70%' spacer='30%' icon={icon_react}/>
         </Grid.Row>
@@ -73,7 +71,7 @@ class Desenvolvimento extends React.Component{
         <Item name='PHP' percent='55%' spacer='45%' icon={icon_php} />
         </Grid.Row>
         <Grid.Row>
-        <Item name='Git' percent='60%' spacer='40%' icon={icon_git} />
+        <Item name='Wordpress' percent='70%' spacer='30%' icon={icon_wordpress} />
         </Grid.Row>
       </Grid.Column>
 

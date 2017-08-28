@@ -11,6 +11,19 @@ class MainMenu extends React.Component{
       this.handleExitText = this.handleExitText.bind(this)
     }
 
+    componentDidUpdate(prevState){
+      let check = false
+      for (let key in this.state.visible) {
+        if(this.state.visible[key] === true){
+          check = true
+        }
+        
+      }
+      if(check === true){
+      this.setState({visible: {sobre: false, projetos: false, habilidades: false, contato: false}})
+      }
+    }
+
     handleEnterText(name){
       let {visible} = this.state
       visible[name] = true
@@ -28,7 +41,7 @@ class MainMenu extends React.Component{
     const menuHeight = window.innerHeight * 0.4
 
     return(
-      <Menu className='menu' floated='right' vertical secondary inverted icon style={{position: 'relative', right:'20px', top:menuHeight}} >
+      <Menu className='menu' floated='right' vertical secondary inverted icon style={{position: 'fixed', right:'20px', top:menuHeight}} >
       <Grid>
           <Grid.Row >
             <Grid.Column style={{position: 'relative'}}>

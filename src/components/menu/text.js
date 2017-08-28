@@ -16,7 +16,8 @@ class MenuText extends React.Component{
     const {name, visible} = this.props
     return(
       <Transition visible={visible[name]} duration={500} animation='fade' >
-      <div style={{color: 'white', position: 'absolute', right: '50px', top:'8px'}} >{this.handleCase()}</div>
+      <div className='menu_text' style={{  fontFamily: "'Inconsolata', sans-serif",  textShadow: '-2px 0 black, 0 2px black, 2px 0 black, 0 -2px black',
+      color: '#ffffff', position: 'absolute', right: '50px', top:'8px'}} >{this.handleCase()}</div>
     </Transition>
     )
   }

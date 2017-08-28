@@ -30,23 +30,22 @@ class Sobre extends Component {
       <div id='campo_estrelas' style={{width: '100%', position:'relative'}}>
         {this.state.estrelas.map((estrela, i) => <Estrela key={i} x={estrela.x} y={estrela.y} size={estrela.size}/>)}
       </div>
-      <Grid centered style={{ paddingTop: '80px'}} padded >
-      <Grid.Row>
+      <Grid centered style={{ paddingTop: '50px'}} stackable padded >
 
-        <Grid.Column width={2}>
-            <Image src={foto} alt='foto'  shape='circular'   verticalAlign='middle' />
-        </Grid.Column>
-        <Grid.Column  width={5} style={{marginTop: '20px'}}>     
+        <Grid.Row>
+            <Image src={foto} alt='foto' inline shape='circular'  verticalAlign='middle' />
+        </Grid.Row>
+        <Grid.Row>
             <h2 className='hello'>Olá!<br />
             Eu me chamo Milton Mazetto Junior<br />
             e sou um desenvolvedor Front-End.</h2>
-        </Grid.Column>
+        </Grid.Row>
 
-      </Grid.Row>
-      <Grid.Row>
-      <Grid.Column width={8} style={{margin:'0', paddingTop:'80px'}} >
-        <p className='formacao'>Minha formação original é na área de História e Educação, mas nos últimos anos tenho trabalhado na área de TI, com foco no desenvolvimento de projetos na área de Front-End, Web Design e Usabilidade.</p> 
-        <p className='formacao'>Acesse o meu <a>LinkedIn</a> e saiba mais sobre a minha trajetória e meus projetos, ou faça download do meu <a>Currículo</a>. </p> <p className='formacao'>Se você quiser saber como esse site foi criado, acesse o repositório no meu <a>GitHub</a> </p>
+      <Grid.Row >
+      <Grid.Column id='sobre3' computer={10} mobile={16} textAlign='center' style={{margin:'0', paddingTop:'60px!important'}} >
+        <p className='formacao'>Minha formação original é na área de História e Educação, mas nos últimos anos tenho trabalhado na área de TI, com foco no desenvolvimento de projetos na área de Front-End, Web Design.</p> <br/>
+        <p className='formacao'>Acesse o meu <a>LinkedIn</a> e saiba mais sobre a minha trajetória e meus projetos, ou faça download do meu <a>Currículo</a>. </p><br />
+         <p className='formacao'>Se você quiser saber como esse site foi criado, acesse o repositório no meu <a>GitHub</a> </p>
         </Grid.Column>
       </Grid.Row>
       </Grid>
