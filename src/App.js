@@ -51,10 +51,10 @@ class App extends Component {
     const {activeItem} = this.state
     const scrolledDown = document.getElementById('app').scrollHeight - document.getElementById('app').scrollTop === document.getElementById('app').clientHeight
     const scrolledUp = document.getElementById('app').scrollTop === 0
-    if(scrolledDown === true && e.changedTouches[0].clientY + 150 < this.state.touchY   ) {
+    if(scrolledDown === true && e.changedTouches[0].clientY + 180 < this.state.touchY   ) {
       activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' ? this.handleMenuClick('contato') : ''
     }
-    if(scrolledUp === true && e.changedTouches[0].clientY - 150 > this.state.touchY ) {
+    if(scrolledUp === true && e.changedTouches[0].clientY - 180 > this.state.touchY ) {
       activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' ? this.handleMenuClick('sobre') : ''
     }
   }

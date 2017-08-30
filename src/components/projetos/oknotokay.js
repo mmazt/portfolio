@@ -10,7 +10,7 @@ class OkNotOkay extends React.Component{
     return(
       <Transition visible={this.props.visibility} duration={500} animation='fade right' >
       <div style={{position: 'absolute', top: '0', left: '0'}}>
-      <Grid centered >
+      <Grid centered stackable>
       <Grid.Row>
         <Grid.Column width={16}>
           <h2 className='texto-basico'>OkNotOkay</h2>
