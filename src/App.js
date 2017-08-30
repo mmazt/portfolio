@@ -6,7 +6,7 @@ import Skills from './components/habilidades/skills'
 import Contact from './components/contact'
 import MainMenu from './components/menu/menu'
 import WheelReact from 'wheel-react'
-import _ from 'lodash'
+
 
 class App extends Component {
   constructor(props){
@@ -46,16 +46,16 @@ class App extends Component {
   handleTouchStart(e){
     this.setState({touchY: e.changedTouches[0].clientY})
   }
-
+  
   handleTouchEnds(e){
     const {activeItem} = this.state
     const scrolledDown = document.getElementById('app').scrollHeight - document.getElementById('app').scrollTop === document.getElementById('app').clientHeight
     const scrolledUp = document.getElementById('app').scrollTop === 0
-    if(scrolledDown === true && e.changedTouches[0].clientY < this.state.touchY  ) {
-      activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' && this.handleMenuClick('contato')
+    if(scrolledDown === true && e.changedTouches[0].clientY + 150 < this.state.touchY   ) {
+      activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' ? this.handleMenuClick('contato') : ''
     }
-    if(scrolledUp === true && e.changedTouches[0].clientY > this.state.touchY) {
-      activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' && this.handleMenuClick('sobre')
+    if(scrolledUp === true && e.changedTouches[0].clientY - 150 > this.state.touchY ) {
+      activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' ? this.handleMenuClick('sobre') : ''
     }
   }
   //
@@ -72,7 +72,7 @@ class App extends Component {
       },
       down: () => {
         const scrolledUp = document.getElementById('app').scrollTop === 0
-        
+
         if(scrolledUp === true) {
           activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' && this.handleMenuClick('sobre')
         }
