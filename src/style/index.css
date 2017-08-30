@@ -39,7 +39,6 @@ body #root{
 }
 
 .habilidade-header{
-  margin-bottom: 45px!important;
   font-size: 1.5em!important;
 } 
 @media only screen and (min-width: 1025px){
@@ -68,6 +67,12 @@ body #root{
     width: 32px!important;
     height: 32px!important;
 
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .ceu{
+    max-width: 100%
   }
 }
 
@@ -121,7 +126,8 @@ body #root{
   background-size: 100%;
   background-clip: border-box;
   border: 0;
-  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .texto-contato{
@@ -132,6 +138,27 @@ body #root{
   font-family: 'Inconsolata', sans-serif!important;
   font-size: 1.5em;
   color: #FFFFFF!important;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.texto-menu{
+  font-family: 'Inconsolata', sans-serif!important;
+  color: #FFFFFF!important;
+  font-size: 1.2em;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.texto-projetos{
+  font-family: 'Inconsolata', sans-serif!important;
+  color: #FFFFFF!important;
+  font-size: 1.1em;
+  text-shadow:  0 -1.5px black;
+}
+
+.texto-sub{
+  font-family: 'Inconsolata', sans-serif!important;
+  color: #FFFFFF!important;
+  font-size: 1.2em;
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 

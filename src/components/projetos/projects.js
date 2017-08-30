@@ -28,22 +28,26 @@ class Projects extends React.Component {
     const {activeItem} = this.state
     return(
       <Transition transitionOnMount={true}  duration={500} animation={this.state.animation} >
-      <div key='projetos' className='projetos' style={{height: window.innerHeight - 10}}>
-      <Grid style={{ paddingTop: '80px'}} padded>
-        <Grid.Row>
-          <Grid.Column width={15} floated='right'>
-        <h2>Projetos</h2>
+      <div key='projetos' className='projetos' style={{minHeight:'100%'}}>
+      <Grid  padded>
+        <Grid.Row style={{ paddingTop: '20px', paddingLeft: '20px'}}>
+        
+        <h2 className='texto-basico'>Projetos</h2>
+        
+        
+        </Grid.Row>
+        <Grid.Row style={{margin: '0', padding: '0'}}>
+        <Grid.Column computer={16} floated='left' >
+        <Menu tabular secondary stackable style={{margin: '0', padding: '0'}} >
+          <Menu.Item name='popscience' className='texto-menu' active={activeItem === 'popscience'} onClick={this.handleMenuClick} >PopScience!</Menu.Item>
+          <Menu.Item name='pineapple' className='texto-menu' active={activeItem === 'pineapple'} onClick={this.handleMenuClick}>Pineapple Acessórios</Menu.Item>
+          <Menu.Item name='oknotokay' className='texto-menu' active={activeItem === 'oknotokay'} onClick={this.handleMenuClick}>OkNotOkay</Menu.Item>
+        </Menu>
         </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-        <Grid.Column width={4} floated='right'>
-          <Menu vertical tabular secondary inverted>
-            <Menu.Item name='popscience' active={activeItem === 'popscience'} onClick={this.handleMenuClick} >PopScience!</Menu.Item>
-            <Menu.Item name='pineapple' active={activeItem === 'pineapple'} onClick={this.handleMenuClick}>Pineapple Acessórios</Menu.Item>
-            <Menu.Item name='oknotokay' active={activeItem === 'oknotokay'} onClick={this.handleMenuClick}>OkNotOkay</Menu.Item>
-          </Menu>
-          </Grid.Column>
-          <Grid.Column width={10}>
+        <Grid.Row centered textAlign='center'>
+
+          <Grid.Column width={12} tablet={15} textAlign='center'>
             <Popscience visibility={activeItem === 'popscience' ? true : false} /> 
             <Pineapple visibility={activeItem === 'pineapple' ? true : false} /> 
             <OkNotOkay visibility={activeItem === 'oknotokay' ? true : false} />

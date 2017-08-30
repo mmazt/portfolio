@@ -21,7 +21,7 @@ class Skills extends React.Component {
   render(){
     return(
       <Transition transitionOnMount={true} duration={500} animation={this.state.animation}  >
-      <div className='habilidades' style={{height: window.innerHeight - 10}} >
+      <div className='habilidades' style={{ minHeight:'100%'}} >
       <Grid >
         <Grid.Row>
           <Grid.Column width={15} style={{ paddingTop: '10px'}} floated='left'>
@@ -33,18 +33,18 @@ class Skills extends React.Component {
           <Header className='texto-basico habilidade-header' as='h3'>Desenvolvimento</Header>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={15} style={{paddingLeft:'0', marginLeft:'0'}} floated='left'>
+        <Grid.Row style={{marginTop:'30px', marginLeft: '-30px'}} >
+          <Grid.Column width={15} style={{paddingLeft:'-30px', marginLeft:'0'}} floated='left'>
             <Desenvolvimento />
           </Grid.Column>
           </Grid.Row>
         <Grid.Row >
-        <Grid.Column width={15} style={{paddingLeft:'30px'}} floated='left'>
+        <Grid.Column width={15} style={{marginLeft:'30px'}} floated='left'>
         <Header as='h3' className='texto-basico  habilidade-header' >Design</Header>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-        <Grid.Column width={15} style={{paddingLeft:'0'}} floated='left'>
+        <Grid.Row style={{marginTop:'-30px'}}>
+        <Grid.Column width={15} style={{marginLeft:'-30px'}} floated='left'>
         <Design />
       </Grid.Column>
         </Grid.Row>

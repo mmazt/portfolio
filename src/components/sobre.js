@@ -44,8 +44,8 @@ class Sobre extends Component {
       <Grid.Row >
       <Grid.Column id='sobre3' computer={10} mobile={16} textAlign='center' style={{margin:'0', paddingTop:'60px!important'}} >
         <p className='formacao'>Minha formação original é na área de História e Educação, mas nos últimos anos tenho trabalhado na área de TI, com foco no desenvolvimento de projetos na área de Front-End, Web Design.</p> <br/>
-        <p className='formacao'>Acesse o meu <a>LinkedIn</a> e saiba mais sobre a minha trajetória e meus projetos, ou faça download do meu <a>Currículo</a>. </p><br />
-         <p className='formacao'>Se você quiser saber como esse site foi criado, acesse o repositório no meu <a>GitHub</a> </p>
+        <p className='formacao'>Acesse o meu <a href='https://www.linkedin.com/in/milton-mazetto-junior-18148494/' target='_blank'  rel="noopener noreferrer">LinkedIn</a> e saiba mais sobre a minha trajetória e meus projetos, ou faça download do meu <a href='http://www.mmazetto.me/files/Milton_Mazetto_Junior.pdf' target='_blank'  rel="noopener noreferrer">Currículo</a>. </p><br />
+         <p className='formacao'>Se você quiser saber como esse site foi criado, acesse o repositório no meu <a href='https://github.com/mmazt' target='_blank' rel="noopener noreferrer">GitHub</a> </p>
         </Grid.Column>
       </Grid.Row>
       </Grid>

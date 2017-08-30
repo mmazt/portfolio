@@ -5,6 +5,8 @@ import Projects from './components/projetos/projects'
 import Skills from './components/habilidades/skills'
 import Contact from './components/contact'
 import MainMenu from './components/menu/menu'
+import WheelReact from 'wheel-react'
+import _ from 'lodash'
 
 class App extends Component {
   constructor(props){
@@ -14,7 +16,6 @@ class App extends Component {
     this.handleVisibity = this.handleVisibity.bind(this)
     this.handleTouchStart = this.handleTouchStart.bind(this)
     this.handleTouchEnds = this.handleTouchEnds.bind(this)
-    this.handleWheel = this.handleWheel.bind(this)
   }
 
 
@@ -39,36 +40,21 @@ class App extends Component {
     }
   }
 
-  handleWheel(e){
-    const {activeItem} = this.state
-    const scrolledDown = document.getElementById('app').scrollHeight - document.getElementById('app').scrollTop === document.getElementById('app').clientHeight
-    const scrolledUp = document.getElementById('app').scrollTop === 0
-    const wheel = Math.max(-1, (e.deltaY || -e.deltaY))
 
-    
-    if(scrolledDown === true && (e.deltaY >= 25) && activeItem !== 'contato') {
-      setTimeout(() => {activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' && this.handleMenuClick('contato')}, 50)
-    }
-    if(scrolledUp === true && (e.deltaY <= -25) &&  activeItem !== 'sobre') {
-      setTimeout(() => {activeItem === 'projetos' ? this.handleMenuClick('sobre') : activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'contato' && this.handleMenuClick('habilidades') }, 50)
-    }
-
-  }
 
   //Inicio função que captura o swipe do Touch
   handleTouchStart(e){
-    this.setState({touchX: e.changedTouches[0].clientX})
+    this.setState({touchY: e.changedTouches[0].clientY})
   }
 
   handleTouchEnds(e){
     const {activeItem} = this.state
     const scrolledDown = document.getElementById('app').scrollHeight - document.getElementById('app').scrollTop === document.getElementById('app').clientHeight
     const scrolledUp = document.getElementById('app').scrollTop === 0
-
-    if(scrolledDown === true && e.changedTouches[0].clientX < this.state.touchX  ) {
+    if(scrolledDown === true && e.changedTouches[0].clientY < this.state.touchY  ) {
       activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' && this.handleMenuClick('contato')
     }
-    if(scrolledUp === true && e.changedTouches[0].clientX > this.state.touchX) {
+    if(scrolledUp === true && e.changedTouches[0].clientY > this.state.touchY) {
       activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' && this.handleMenuClick('sobre')
     }
   }
@@ -76,8 +62,25 @@ class App extends Component {
 
   render() {
     const {activeItem} = this.state
+    WheelReact.config({
+      up: () => {
+        const scrolledDown = document.getElementById('app').scrollHeight - document.getElementById('app').scrollTop === document.getElementById('app').clientHeight
+        
+        if(scrolledDown === true) {
+          activeItem === 'sobre' ? this.handleMenuClick('projetos') :  activeItem === 'projetos' ? this.handleMenuClick('habilidades') : activeItem === 'habilidades' && this.handleMenuClick('contato')
+        }
+      },
+      down: () => {
+        const scrolledUp = document.getElementById('app').scrollTop === 0
+        
+        if(scrolledUp === true) {
+          activeItem === 'contato' ? this.handleMenuClick('habilidades') :  activeItem === 'habilidades' ? this.handleMenuClick('projetos') : activeItem === 'projetos' && this.handleMenuClick('sobre')
+        }
+        
+      }
+    });
     return (
-        <div id='app' onWheel={this.handleWheel} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnds} className='main'>
+        <div id='app' {...WheelReact.events} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnds} className='main'>
           <MainMenu handleMenuClick={this.handleMenuClick} activeItem={activeItem} />
           {activeItem === 'sobre' ?     <Sobre previous={this.state.previous} />:
           activeItem === 'projetos' ? <Projects previous={this.state.previous} /> :
